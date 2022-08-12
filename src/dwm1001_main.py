@@ -90,7 +90,7 @@ class dwm1001_localizer:
 
             while not rospy.is_shutdown():
                 # just read everything from serial port
-                serialReadLine = serialPortDWM1001.read_until()
+                serialReadLine = str(serialPortDWM1001.read_until())
 
                 try:
                     self.pubblishCoordinatesIntoTopics(self.splitByComma(serialReadLine))
